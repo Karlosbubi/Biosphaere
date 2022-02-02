@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"Biosphaere/Serial"
+	"Biosphaere/Server"
+)
 
 func main() {
-	fmt.Println("Hello Wolrd")
+	Serial.PrintPorts()
+	Server.RunServer()
 }

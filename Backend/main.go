@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	Serial.PrintPorts()
+	Serial.PrintDetailedPorts()
 	Server.RunServer()
 }

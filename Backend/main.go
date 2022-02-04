@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-	Serial.PrintDetailedPorts()
+	a := Serial.GetArduinos()
+	ReadData(a[len(a)-1])
 	Server.RunServer()
 }

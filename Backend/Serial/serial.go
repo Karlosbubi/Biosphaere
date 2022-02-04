@@ -39,8 +39,9 @@ func PrintDetailedPorts() {
 	}
 }
 
-func GetArduinos() {
-	ports, err := serial.GetPortsList()
+func GetArduinos() []Arduino {
+	ports, err := enumerator.GetDetailedPortsList()
+	var arduino []Arduino
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -48,7 +49,11 @@ func GetArduinos() {
 		log.Fatal("No Serialports found!")
 	}
 	for _, port := range ports {
-		fmt.Printf("Found port: %v\n", port)
+		if port.IsUSB {
+			fmt.Printf("Serial USB port: %v\n", port)
+			arduino = append(arduino, Arduino{port: port.Name})
+		}
 	}
 
+	return arduino
 }

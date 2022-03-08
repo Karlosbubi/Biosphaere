@@ -49,7 +49,7 @@ class Messung
 	}
 
 public:
-	Messung(int CO2_Pin, int ldr_Pin, int RTH1_Pin, int baud)
+	Messung(int CO2_Pin, int ldr_Pin, int RTH1_Pin)
 	{
 		co2_sensor = CO2_Pin;
 		ldr = ldr_Pin;
@@ -61,7 +61,7 @@ public:
 		dht = new DHT(RTH1, DHT22);
 
 		dht->begin();
-		Serial.begin(baud);
+		//Serial.begin(baud);
 	}
 
 	StaticJsonDocument<32> toJSON(){
@@ -77,7 +77,7 @@ public:
 	return doc;
 	}
 
-	void sendMessung()
+	/*void sendMessung()
 	{
 		Serial.print(ppm);
 		Serial.print(",");
@@ -86,7 +86,7 @@ public:
 		Serial.print(temp);
 		Serial.print(",");
 		Serial.println(lux);
-	}
+	}*/
 };
 
 #endif

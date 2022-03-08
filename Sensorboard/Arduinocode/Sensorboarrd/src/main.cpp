@@ -20,7 +20,7 @@ void setup()
   pinMode(led2, OUTPUT);
   pinMode(led3, OUTPUT);
 
-  messung = new Messung(co2_sensor, ldr, RTH1, 9600);
+  messung = new Messung(co2_sensor, ldr, RTH1);
   comm = new Comms("Testing", 9600);
 }
 

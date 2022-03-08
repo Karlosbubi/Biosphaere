@@ -1,5 +1,7 @@
 package Server
 
-func RunServer() {
+import "database/sql"
+
+func RunServer(db *sql.DB) {
 
 }

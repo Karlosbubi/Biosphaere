@@ -51,7 +51,7 @@ func GetArduinos() []Arduino {
 	for _, port := range ports {
 		if port.IsUSB {
 			fmt.Printf("Serial USB port: %v\n", port)
-			arduino = append(arduino, Arduino{port: port.Name})
+			arduino = append(arduino, Arduino{Port: port.Name})
 		}
 	}
 
